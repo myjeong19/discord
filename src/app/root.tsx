@@ -1,3 +1,4 @@
+import { QueryClientProvider } from "react-query";
 import {
   isRouteErrorResponse,
   Links,
@@ -6,13 +7,8 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-
-import {
-  QueryClientProvider,
-} from 'react-query'
-import { queryClient } from "./providers/query";
-
 import type { Route } from "./+types/root";
+import { queryClient } from "./providers/query";
 import "./app.css";
 
 export const links: Route.LinksFunction = () => [
