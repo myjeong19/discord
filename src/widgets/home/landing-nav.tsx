@@ -1,7 +1,8 @@
 import { ChevronDownIcon } from "lucide-react";
 import { Link } from "react-router";
-import { NAVIGATION_LINKS } from "shared/constants";
-import { mergeClasses } from "shared/utils";
+import { KakaoLoginButton } from "~/features/auth/login/ui";
+import { NAVIGATION_LINKS } from "~shared/constants";
+import { mergeClasses } from "~shared/utils";
 
 export default function LandingNav() {
   return (
@@ -60,12 +61,7 @@ export default function LandingNav() {
         ))}
       </ul>
 
-      <Link
-        to="/"
-        className="fixed top-10 right-10 z-10 bg-white text-black p-3 rounded-md"
-      >
-        로그인
-      </Link>
+      <KakaoLoginButton />
     </nav>
   );
 }
