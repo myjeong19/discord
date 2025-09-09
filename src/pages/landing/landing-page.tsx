@@ -1,4 +1,4 @@
-import LandingNav from "widgets/home/landing-nav";
+import LandingNav from "~widgets/home/landing-nav";
 
 export default function LandingPage() {
   return (

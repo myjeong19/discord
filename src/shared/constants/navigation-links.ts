@@ -38,28 +38,7 @@ const SAFETY_CENTER_POPOVER_LINKS: PopoverSection[] = [
   },
   {
     title: "Hubs",
-    links: [
-      {
-        label: "부모님 허브",
-        href: "/safety-family-center",
-      },
-      {
-        label: "정책 허브",
-        href: "/safety-library",
-      },
-      {
-        label: "개인정보 보호 허브",
-        href: "/safety-news",
-      },
-      {
-        label: "투명성 허브",
-        href: "/safety-teen-charter",
-      },
-      {
-        label: "웰빙 허브",
-        href: "/safety-teen-charter",
-      },
-    ],
+    links: [],
   },
 ];
 
