@@ -3,11 +3,25 @@ import { redirectToKakaoAuth } from "~features/auth/login/lib/redirect-to-kakao-
 export function KakaoLoginButton() {
   return (
     <button
+      className="cursor-pointer "
       type="button"
       onClick={redirectToKakaoAuth}
-      className="fixed top-10 right-10 z-10 bg-white text-transparent rounded-md cursor-pointer "
     >
-      <img src="/ko-kakao.webp" alt="kakao login button" />
+      <img
+        src="/ko_kakao_login_mobile.webp"
+        alt="kakao login button"
+        className="flex md:hidden w-full h-full  object-contain"
+        width={100}
+        height={36}
+      />
+
+      <img
+        src="/ko_kakao_login_desktop.webp"
+        alt="kakao login button"
+        className="hidden md:flex w-full h-full  object-contain"
+        width={100}
+        height={36}
+      />
     </button>
   );
 }

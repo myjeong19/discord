@@ -1,7 +1,6 @@
-import LandingPage from "~/pages/landing";
-import type { Route } from "./+types/landing";
+import LandingPage from "~pages/landing/ui";
 
-export function meta(_: Route.MetaArgs) {
+export function meta() {
   return [
     { title: "Discord Clone" },
     { name: "description", content: "Welcome to Discord Clone!" },

@@ -1,10 +1,11 @@
 interface Link {
   label: string;
-  href: string;
+  href?: string;
 }
 
 interface NavigationLink extends Link {
   type: "link" | "popover";
+  icon?: string;
   popoverAlign?: "row" | "column";
   popoverSections?: PopoverSection[];
 }
@@ -38,7 +39,145 @@ const SAFETY_CENTER_POPOVER_LINKS: PopoverSection[] = [
   },
   {
     title: "Hubs",
-    links: [],
+    links: [
+      {
+        label: "부모님 허브",
+        href: "/safety-parents",
+      },
+      {
+        label: "정책 허브",
+        href: "/safety-policies",
+      },
+      {
+        label: "개인정보 보호 허브",
+        href: "/safety-privacy",
+      },
+      {
+        label: "투명성 허브",
+        href: "/safety-transparency",
+      },
+      {
+        label: "웰빙 허브",
+        href: "/safety-wellbeing",
+      },
+    ],
+  },
+];
+
+const QUEST_POPOVER_LINKS: PopoverSection[] = [
+  {
+    title: "리소스",
+    links: [
+      {
+        label: "광고",
+        href: "/ads/quests",
+      },
+      {
+        label: "성공 사례",
+        href: "/ads/quests-success-stories",
+      },
+      {
+        label: "퀘스트 자주 묻는 질문",
+        href: "/ads/quests-faq",
+      },
+    ],
+  },
+];
+
+const SUPPORT_POPOVER_LINKS: PopoverSection[] = [
+  {
+    title: "리소스",
+    links: [
+      {
+        label: "고객센터",
+        href: "/hc/en-us",
+      },
+      {
+        label: "피드백",
+        href: "/hc/en-us/community/topics",
+      },
+      {
+        label: "요청제출",
+        href: "/hc/en-us/requests/new",
+      },
+    ],
+  },
+];
+
+const BLOG_POPOVER_LINKS: PopoverSection[] = [
+  {
+    title: "컬렉션",
+    links: [
+      {
+        label: "블로그",
+        href: "/blog",
+      },
+      {
+        label: "추천",
+        href: "/blog",
+      },
+      {
+        label: "커뮤니티",
+        href: "/category/community",
+      },
+      {
+        label: "Discord HQ",
+        href: "/category/company",
+      },
+      {
+        label: "엔지니어링 및 개발사",
+        href: "/category/engineering",
+      },
+      {
+        label: "Discord 이용 방법",
+        href: "/category/how-to-discord",
+      },
+      {
+        label: "정책 및 안전",
+        href: "/category/safety",
+      },
+      {
+        label: "제품 및 기능",
+        href: "/category/product",
+      },
+    ],
+  },
+];
+
+const DEVELOPER_POPOVER_LINKS: PopoverSection[] = [
+  {
+    title: "추천",
+    links: [
+      {
+        label: "Discord 소셜 SDK",
+        href: "/developers/social-sdk",
+      },
+      {
+        label: "앱과 활동",
+        href: "/developers/build",
+      },
+    ],
+  },
+  {
+    title: "문서",
+    links: [
+      {
+        label: "개발자",
+        href: "/developers",
+      },
+      {
+        label: "개발자 문서",
+        href: "/developers/docs/intro",
+      },
+      {
+        label: "개발자 애플리케이션",
+        href: "/developers/applications",
+      },
+      {
+        label: "개발자 고객센터",
+        href: "/hc/en-us",
+      },
+    ],
   },
 ];
 
@@ -60,34 +199,41 @@ export const NAVIGATION_LINKS: NavigationLink[] = [
   },
   {
     label: "보안센터",
-    href: "/safety",
     type: "popover",
+    icon: "/egg.webp",
     popoverAlign: "row",
     popoverSections: SAFETY_CENTER_POPOVER_LINKS,
   },
   {
     label: "퀘스트",
-    href: "/ads/quests",
     type: "popover",
+    icon: "/trophy.webp",
+    popoverAlign: "column",
+    popoverSections: QUEST_POPOVER_LINKS,
   },
   {
     label: "지원",
-    href: "/hc",
     type: "popover",
+    icon: "/hamster.webp",
+    popoverAlign: "column",
+    popoverSections: SUPPORT_POPOVER_LINKS,
   },
   {
     label: "블로그",
-    href: "/blog",
+    icon: "/discord.webp",
     type: "popover",
+    popoverAlign: "column",
+    popoverSections: BLOG_POPOVER_LINKS,
   },
   {
     label: "개발자",
-    href: "/developers",
+    icon: "/robot.webp",
     type: "popover",
+    popoverAlign: "column",
+    popoverSections: DEVELOPER_POPOVER_LINKS,
   },
   {
     label: "인재채용",
-    href: "/careers",
     type: "link",
   },
 ];
