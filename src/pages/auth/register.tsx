@@ -20,7 +20,7 @@ export default function RegisterPage() {
               name="username"
               className="w-full h-10 mb-3 bg-discord-deep-gray rounded-xl p-2 focus:outline-1 focus:outline-blue-300"
             />
-            <p className="text-sm animate-slide-in animate-slide-out max-h-0 opacity-0 translate-y-2 overflow-hidden">
+            <p className="text-sm input-focus-slide">
               숫자, 문자, 밑줄 _, 마침표만 사용할 수 있습니다.
             </p>
           </div>
