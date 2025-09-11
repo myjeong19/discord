@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useMutation } from "react-query";
+import { useMutation } from "@tanstack/react-query";
 import { requestKy } from "~/shared/api/ky";
 
 const kakaoLogin = async (code: string) => {
@@ -15,10 +15,10 @@ export const useKakaoLogin = (): void => {
       const response = await kakaoLogin(code);
       return response;
     },
-    onSuccess: (data) => {
+    onSuccess: (data: unknown) => {
       console.log(data);
     },
-    onError: (error) => {
+    onError: (error: unknown) => {
       console.error(error);
     },
     retry: false,

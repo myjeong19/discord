@@ -1,4 +1,5 @@
 import { ChevronDownIcon } from "lucide-react";
+import React from "react";
 import { Link } from "react-router";
 import { useSelectMenu } from "~/pages/landing/lib/use-select-menu";
 import { NAVIGATION_LINKS } from "~shared/constants";
@@ -21,9 +22,9 @@ export default function NavigationList({ type }: NavigationListProps) {
             "hidden lg:flex xl:gap-0.5  text-white text-xs xl:text-base relative",
           )}
         >
-          {NAVIGATION_LINKS.map((link) => (
+          {NAVIGATION_LINKS.map((link, index) => (
             <li
-              key={link.href}
+              key={`${link.href} + ${index}`}
               className={mergeClasses(
                 "group relative flex items-center justify-center rounded-2xl h-10 py-1 px-2 xl:py-2.5 xl:px-4 hover:bg-discord hover:text-white transition-all duration-300",
                 link.type === "popover" && "hover:bg-discord hover:text-white",
@@ -58,8 +59,8 @@ export default function NavigationList({ type }: NavigationListProps) {
                         {section.title}
                       </strong>
                       <ul>
-                        {section.links.map((link) => (
-                          <li className="p-1" key={link.href}>
+                        {section.links.map((link, index) => (
+                          <li className="p-1" key={`${link.href} + ${index}`}>
                             {link.label}
                           </li>
                         ))}
@@ -87,9 +88,9 @@ export default function NavigationList({ type }: NavigationListProps) {
 
   return (
     <ul className="flex flex-col text-lg text-neutral-200 p-7 overflow-y-auto h-full max-h-[78.5vh] [&::-webkit-scrollbar]:hidden">
-      {NAVIGATION_LINKS.map((link) => {
+      {NAVIGATION_LINKS.map((link, index) => {
         return (
-          <>
+          <React.Fragment key={`${link.href} + ${index}`}>
             {link.popoverSections?.length ? (
               <li className="group pt-6 pb-3 border-b border-zinc-400/20">
                 <button
@@ -136,7 +137,7 @@ export default function NavigationList({ type }: NavigationListProps) {
                 </Link>
               )
             )}
-          </>
+          </React.Fragment>
         );
       })}
     </ul>
