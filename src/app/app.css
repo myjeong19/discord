@@ -6,6 +6,8 @@
     "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --color-discord: #5865f2;
   --color-kakao: #fee403;
+  --color-discord-gray: #393a41;
+  --color-discord-deep-gray: #2e2e34;
 
   --radius-5xl: 2.5rem;
   --radius-6xl: 3rem;
@@ -24,12 +26,7 @@ body {
 
 @keyframes slide-up {
   0% {
-    transform: translateY(50%);
-    opacity: 0;
-  }
-
-  50% {
-    transform: translateY(25%);
+    transform: translateY(10%);
     opacity: 0;
   }
 
@@ -46,4 +43,38 @@ body {
 
 .animate-slide-up {
   animation: slide-up 0.8s ease-out;
+}
+
+@keyframes slide-in {
+  0% {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    max-height: 80px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    max-height: 80px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    max-height: 0;
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+.group:focus-within .animate-slide-in {
+  animation: slide-in 0.5s ease-out forwards;
+}
+
+.group:not(:focus-within) .animate-slide-out {
+  animation: slide-out 0.5s ease-out forwards;
 }
